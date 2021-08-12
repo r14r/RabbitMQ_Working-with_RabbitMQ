@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: playground_working-with_rabbitmq-and-go_rabbitmq
+
+    ports:
+        - 5672:5672
+        - 15672:15672
+
+    volumes:
+      - .\volumes\rabbitmq\data/:/var/lib/rabbitmq/
+      - .\volumes\rabbitmq\log/:/var/log/rabbitmq
+
+    networks:
+        - playground_working-with_rabbitmq-and-go_network
+
+networks:
+   playground_working-with_rabbitmq-and-go_network:
+    name:  playground_working-with_rabbitmq-and-go_network
+    driver: bridge
+
