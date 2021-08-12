@@ -6,9 +6,9 @@ down:
 
 
 send:
-	go run sendMessage.go
+	cd go && go run sendMessage.go
 
 
 consume:
-	go run consumer.go
+	cd go && go run consumer.go
 
